@@ -1,0 +1,253 @@
+// 1) Bootstrap functions (needed for some variables/maps)
+@import "../../../node_modules/bootstrap/scss/functions";
+
+// 2) Overrides (must come before Bootstrap's variables are consumed)
+$white:    #fff;
+$black:    #000;
+
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-850: #2b3035;
+$gray-900: #21232E;
+
+$primary:   #FFD301;
+$secondary: #CCCCCC;
+$success:   #01ff08;
+$danger:    #ff016c;
+$info:      #00d4ff;
+$warning:   #ff8c00;
+$light:     #f8f9fa;
+$dark:      #20232c;
+
+// Checkboxes, radios and switches
+$form-check-input-checked-color: #000; // icon colour
+$form-check-input-checked-bg-color: #f1c40f; // background
+$form-check-input-checked-border-color: #f1c40f;
+$form-switch-checked-color: #000;          // thumb colour when ON
+$form-switch-color: rgba($white, .25);     // thumb colour when OFF — rgba white matching dark mode
+
+$theme-colors-bg-subtle-dark: (
+  "primary":   $primary,
+  "secondary": $secondary,
+  "success":   $success,
+  "info":      $info,
+  "warning":   $warning,
+  "danger":    $danger,
+  "light":     $gray-100,
+  "dark":      $dark
+);
+
+$theme-colors-text-dark: (
+  "primary":   $dark,
+  "secondary": $dark,
+  "success":   $dark,
+  "info":      $dark,
+  "warning":   $dark,
+  "danger":    $dark,
+  "light":     $dark,
+  "dark":      $dark
+);
+
+$body-bg: #272A36;
+$body-color: $gray-300; // match dark-mode body colour
+
+$body-bg-dark: #272A36;
+$body-secondary-bg-dark: #333747;
+$body-tertiary-bg-dark: #3e4356;
+
+$progress-bar-color: $dark;
+$list-group-active-color-dark: $dark;
+$nav-tabs-link-active-color-dark: $light;
+$list-group-active-color-dark: $dark;
+$list-group-active-color:$dark;
+
+$nav-pills-link-active-color: $dark;
+$nav-pills-link-active-color-dark: $dark;
+
+$pagination-active-color: $dark;
+$pagination-active-color-dark: $dark;
+
+$table-striped-bg-factor: .02;
+
+// --- Core font stacks ---
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI",
+  Roboto, "Helvetica Neue", Arial, sans-serif;
+
+$font-family-serif: "Merriweather", Georgia, "Times New Roman", Times, serif;
+
+$font-family-monospace: "JetBrains Mono", "SFMono-Regular",
+  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+// --- Base assignments ---
+$font-family-base: $font-family-sans-serif;
+$headings-font-family: $font-family-sans-serif; // or $font-family-serif
+$display-font-family: $headings-font-family;
+$btn-font-family: $font-family-base;
+
+// Optional: make Bootstrap utilities align with your stacks
+$font-family-code: $font-family-monospace;
+
+.alert:not(.alert-dark) .btn-close {
+    /* Ensure no "white close" filter is forcing it */
+    filter: none;
+    /* Replace the SVG with your colour (note %23 = #) */
+    --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23272A36'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+}
+
+$form-valid-color-dark: #4ade80;
+$form-valid-border-color-dark: #4ade80;
+
+$form-invalid-color-dark: #fb7185;
+$form-invalid-border-color-dark: #fb7185;
+
+// Inline <code> — tinted to match dark-mode default (tint-color of $success 40%)
+$code-color:      tint-color($success, 40%);
+$code-color-dark: tint-color($success, 40%); // pin dark to same value so both modes are identical
+// Optional: adjust font sizing
+$code-font-size: .875em;
+// Optional: kbd styling
+$kbd-color: $dark;
+$kbd-bg: $white;
+
+// Make toasts fully solid
+$toast-background-color: rgba($body-bg-dark, 1);
+
+// =============================================================================
+// Light theme — mirrored to match dark theme exactly
+// Every light variable below is set to equal its dark-mode counterpart so
+// there is effectively one unified theme regardless of data-bs-theme value.
+// =============================================================================
+
+// Body secondary / tertiary — match $body-secondary/tertiary-bg-dark
+$body-secondary-color:     rgba($gray-300, .75);
+$body-secondary-bg:        #333747;
+$body-tertiary-color:      rgba($gray-300, .5);
+$body-tertiary-bg:         #3e4356;
+$body-emphasis-color:      $white;
+
+// Borders — match dark defaults
+$border-color:             $gray-700;
+$border-color-translucent: rgba($white, .15);
+
+// Links — match dark defaults (tinted primary)
+$link-color:       tint-color($primary, 40%);
+$link-hover-color: shift-color(tint-color($primary, 40%), -20%);
+
+// Nav tabs active colour — match $nav-tabs-link-active-color-dark
+$nav-tabs-link-active-color: $light;
+
+// Theme-colour text emphasis — all $dark, matching $theme-colors-text-dark map
+$primary-text-emphasis:   $dark;
+$secondary-text-emphasis: $dark;
+$success-text-emphasis:   $dark;
+$info-text-emphasis:      $dark;
+$warning-text-emphasis:   $dark;
+$danger-text-emphasis:    $dark;
+$light-text-emphasis:     $dark;
+$dark-text-emphasis:      $dark;
+
+// Theme-colour bg-subtle — vivid, matching $theme-colors-bg-subtle-dark map
+$primary-bg-subtle:   $primary;
+$secondary-bg-subtle: $secondary;
+$success-bg-subtle:   $success;
+$info-bg-subtle:      $info;
+$warning-bg-subtle:   $warning;
+$danger-bg-subtle:    $danger;
+$light-bg-subtle:     $gray-100;
+$dark-bg-subtle:      $dark;
+
+// Theme-colour border-subtle — match dark defaults (shade-color 40%)
+$primary-border-subtle:   shade-color($primary, 40%);
+$secondary-border-subtle: shade-color($secondary, 40%);
+$success-border-subtle:   shade-color($success, 40%);
+$info-border-subtle:      shade-color($info, 40%);
+$warning-border-subtle:   shade-color($warning, 40%);
+$danger-border-subtle:    shade-color($danger, 40%);
+$light-border-subtle:     $gray-700;
+$dark-border-subtle:      $gray-800;
+
+// Form validation — match dark overrides
+$form-feedback-valid-color:   #4ade80;
+$form-feedback-invalid-color: #fb7185;
+$form-valid-color:            #4ade80;
+$form-valid-border-color:     #4ade80;
+$form-invalid-color:          #fb7185;
+$form-invalid-border-color:   #fb7185;
+
+// Close button — match dark mode filter (white ×)
+$btn-close-filter: invert(1) grayscale(100%) brightness(200%);
+
+// Carousel — arrows and indicators use $primary
+$carousel-control-color:              $primary;
+$carousel-indicator-active-bg:        $primary;
+$carousel-indicator-active-bg-dark:   $primary;
+$carousel-control-icon-filter-dark:   none; // prevent dark mode inverting the primary-coloured arrows
+
+// Accordion icons — filled chevron matching dark mode icon style
+$accordion-icon-color:        tint-color($primary, 40%);
+$accordion-icon-active-color: tint-color($primary, 40%);
+$accordion-button-icon:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");// 3) The rest of Bootstrap’s “required” imports
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/variables-dark"; // bring in the dark-mode values
+
+@import "../../../node_modules/bootstrap/scss/maps";
+@import "../../../node_modules/bootstrap/scss/mixins";
+
+@import "../../../node_modules/bootstrap/scss/utilities";
+
+// 4) Either import all of Bootstrap…
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+// …or cherry-pick what you need (see below)
+
+// Chrome autofill — override browser-injected yellow/blue with our dark theme colours.
+// box-shadow inset fakes the background; -webkit-text-fill-color overrides the text.
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px $body-bg inset !important;
+  box-shadow: 0 0 0px 1000px $body-bg inset !important;
+  -webkit-text-fill-color: $gray-300 !important;
+  caret-color: $gray-300;
+  border-color: $border-color !important;
+  transition: background-color 5000s ease-in-out 0s; // defeat Chrome's fade-in
+}
+
+// Toast headers: inherit the same background color as the toast body
+@each $color, $value in $theme-colors-bg-subtle-dark {
+  .toast.bg-#{$color} .toast-header {
+    background-color: $value;
+  }
+  // Toast close button: use dark color for visibility on bright backgrounds
+  .toast.bg-#{$color} .btn-close {
+    filter: none;
+    --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2320232c'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+  }
+}
+
+// Custom blockquote override: 2px left border and 1rem left padding
+blockquote {
+  border-left: 2px solid $border-color-dark;
+  padding: 0 0 0 1rem;
+  font-style: italic;
+}
+
+// Highlighted/marked text: solid pale yellow background with dark foreground
+mark {
+  background-color: #fce783;
+  color: $dark;
+}
