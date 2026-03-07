@@ -251,3 +251,6 @@ mark {
   background-color: #fce783;
   color: $dark;
 }
+
+// Import misc custom utilities and overrides (e.g. .flip-horizontal)
+@import "misc";

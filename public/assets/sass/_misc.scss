@@ -1,0 +1,7 @@
+// Custom utilities and overrides that don't fit into the other categories (e.g. .flip-horizontal)
+
+// Flip an element horizontally (e.g. for RTL languages)
+.flip-horizontal {
+    display: inline-block; /* Required for transform to work on inline elements */
+    transform: scaleX(-1);
+}

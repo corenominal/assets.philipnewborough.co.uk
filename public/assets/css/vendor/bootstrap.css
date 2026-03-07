@@ -11974,4 +11974,9 @@ mark, .mark {
   color: #20232c;
 }
 
+.flip-horizontal {
+  display: inline-block; /* Required for transform to work on inline elements */
+  transform: scaleX(-1);
+}
+
 /*# sourceMappingURL=bootstrap.css.map */
