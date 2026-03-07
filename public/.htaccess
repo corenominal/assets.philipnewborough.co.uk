@@ -6,6 +6,12 @@ Options -Indexes
     Header set Access-Control-Allow-Origin "*"
 </FilesMatch>
 
+# Set cross-origin access for JS
+<FilesMatch "\.(js|mjs)$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Vary "Origin"
+</FilesMatch>
+
 # ----------------------------------------------------------------------
 # Rewrite engine
 # ----------------------------------------------------------------------
