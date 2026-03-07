@@ -25,6 +25,8 @@
 # app_baseURL = ''
 # app.forceGlobalSecureRequests = false
 # app.CSPEnabled = false
+# app.appTimezone = 'Europe/London'
+# app.siteName = 'CodeIgniter 4'
 
 #--------------------------------------------------------------------
 # DATABASE
