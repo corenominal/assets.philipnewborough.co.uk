@@ -135,9 +135,11 @@ $body-emphasis-color:      $white;
 $border-color:             $gray-700;
 $border-color-translucent: rgba($white, .15);
 
-// Links — match dark defaults (tinted primary)
-$link-color:       tint-color($primary, 40%);
-$link-hover-color: shift-color(tint-color($primary, 40%), -20%);
+// Links
+$link-color:       $primary;
+$link-color-dark:  $primary; // pin dark to same value so both modes are identical
+$link-hover-color: tint-color($primary, 40%);
+$link-hover-color-dark: tint-color($primary, 40%); // pin dark to same value so both modes are identical
 
 // Nav tabs active colour — match $nav-tabs-link-active-color-dark
 $nav-tabs-link-active-color: $light;
