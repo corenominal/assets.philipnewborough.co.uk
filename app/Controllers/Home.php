@@ -8,7 +8,7 @@ class Home extends BaseController
      * Default controller action for the home route.
      *
      * Checks the current session for an `is_admin` flag and redirects accordingly:
-     * - Redirects administrators to the admin dashboard (`/admin/dashboard`).
+     * - Redirects administrators to the admin dashboard (`/admin`).
      * - Redirects all other users to the configured top-level domain URL
      *   (`config('Urls')->tld`).
      *
