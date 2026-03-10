@@ -24,7 +24,7 @@ class Home extends BaseController
         // Array of CSS files to include
         $data['css'] = ['admin/home'];
         // Set the page title
-        $data['title'] = 'Admin Dashboard';    
+        $data['title'] = 'About';    
         return view('admin/home', $data);
     }
 }

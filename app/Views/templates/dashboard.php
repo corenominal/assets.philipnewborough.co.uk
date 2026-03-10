@@ -45,7 +45,7 @@
             <div class="container-fluid px-0">
                 <a class="navbar-brand d-flex align-items-center gap-2 ms-3" href="<?= site_url() ?>">
                     <img src="/icon.svg" alt="Logo" width="45" height="45" class="d-inline-block align-text-top rounded-circle my-1">
-                    Philip Newborough
+                    Assets Server
                 </a>
 
                 <div>
@@ -107,14 +107,6 @@
                 <div class="offcanvas-body p-0 d-flex flex-column">
                     <nav class="flex-grow-1 py-3" aria-label="Sidebar navigation">
 
-                        <ul class="nav flex-column mb-3">
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2 text-white-50 px-3 py-2 active" href="/">
-                                    <i class="bi bi-speedometer2"></i> Dashboard
-                                </a>
-                            </li>
-                        </ul>
-
                         <?php // is_admin session is set and true
                         if( session()->get('is_admin') ):
                         ?>
@@ -122,7 +114,7 @@
                         <ul class="nav flex-column mb-3">
                             <li class="nav-item">
                                 <a class="nav-link d-flex align-items-center gap-2 text-white-50 px-3 py-2" href="/admin">
-                                    <i class="bi bi-speedometer2"></i> Dashboard
+                                    <i class="bi bi-info-circle"></i> About
                                 </a>
                             </li>
                         </ul>
