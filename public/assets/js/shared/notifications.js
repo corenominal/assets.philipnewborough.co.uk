@@ -199,10 +199,10 @@
             <div class="mb-1">
               <span class="${isUnread ? 'fw-semibold text-white' : 'text-body-secondary'}">
                 ${safeUrl
-                  ? `<a href="${escapeHtml(safeUrl)}" class="stretched-link text-reset text-decoration-none"${!safeUrl.startsWith(window.location.origin) ? ' target="_blank" rel="noopener noreferrer"' : ''}>${escapeHtml(notification.title || '(No title)')}</a>`
+                  ? `<a href="${escapeHtml(safeUrl)}" class="stretched-link text-reset me-2 text-decoration-none"${!safeUrl.startsWith(window.location.origin) ? ' target="_blank" rel="noopener noreferrer"' : ''}>${escapeHtml(notification.title || '(No title)')}</a>`
                   : escapeHtml(notification.title || '(No title)')}
               </span>
-              ${relTime ? `<small class="text-muted ms-2 text-nowrap">${escapeHtml(relTime)}</small>` : ''}
+              ${relTime ? `<br><small class="text-muted text-nowrap">${escapeHtml(relTime)}</small>` : ''}
             </div>
             ${notification.body ? `<p class="mb-0 small ${isUnread ? 'text-white' : 'text-body-secondary'}">${escapeHtml(notification.body)}</p>` : ''}
             ${ctaHtml}
