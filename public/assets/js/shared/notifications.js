@@ -18,8 +18,8 @@
       'Accept': 'application/json',
       'X-Requested-With': 'XMLHttpRequest',
     };
-    const apiKey   = (trigger && trigger.dataset.apikey)   || getCookie('apikey');
-    const userUuid = (trigger && trigger.dataset.userUuid) || getCookie('user_uuid');
+    const apiKey   = getCookie('apikey');
+    const userUuid = getCookie('user_uuid');
     if (apiKey)   headers['apikey']    = apiKey;
     if (userUuid) headers['user-uuid'] = userUuid;
     return headers;
