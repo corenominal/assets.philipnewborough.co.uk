@@ -11,10 +11,14 @@ $routes->get('/admin', 'Admin\Home::index');
 
 // API routes
 $routes->match(['get', 'options'], '/api/test/ping', 'Api\Test::ping');
+$routes->match(['post', 'options'], '/api/metrics/receive', 'Api\Metrics::receive');
 
 // Command line routes
 $routes->cli('cli/test/index/(:segment)', 'CLI\Test::index/$1');
 $routes->cli('cli/test/count', 'CLI\Test::count');
+
+// Metrics route
+$routes->post('/metrics/receive', 'Metrics::receive');
 
 // Logout route
 $routes->get('/logout', 'Auth::logout');
