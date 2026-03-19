@@ -366,4 +366,20 @@
     openAppMenu(trigger);
   });
 
+  // Keyboard shortcut: pressing 'a' opens the app menu when not in a text input
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'a' && e.key !== 'A') return;
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const active = document.activeElement;
+    if (active) {
+      const tag = active.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+      if (active.isContentEditable) return;
+    }
+    const trigger = document.querySelector('.trigger-appmenu');
+    if (!trigger) return;
+    e.preventDefault();
+    openAppMenu(trigger);
+  });
+
 }());
