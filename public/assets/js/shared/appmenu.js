@@ -14,8 +14,8 @@
         100% { background-position: -200% 0; }
       }
       .appmenu-icon-wrap {
-        width: 56px;
-        height: 56px;
+        width: 72px;
+        height: 72px;
         flex-shrink: 0;
         position: relative;
         border-radius: 0.375rem;
@@ -28,8 +28,8 @@
         animation: appmenu-shimmer 1.4s linear infinite;
       }
       .appmenu-icon {
-        width: 56px;
-        height: 56px;
+        width: 72px;
+        height: 72px;
         object-fit: contain;
         display: block;
         position: relative;
@@ -150,7 +150,7 @@
 
     const link = document.createElement('a');
     link.href = url;
-    link.className = 'card-body d-flex align-items-center gap-3 p-2 text-decoration-none text-body stretched-link';
+    link.className = 'card-body d-flex align-items-center gap-3 p-3 text-decoration-none text-body stretched-link';
     link.setAttribute('aria-label', name);
     if (item.target) link.target = item.target;
 
