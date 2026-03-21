@@ -2,6 +2,8 @@
   'use strict';
 
   const MODAL_ID = 'appMenuModal';
+
+  let bsModalInstance = null;
   const STYLES_ID = 'appmenu-styles';
 
   function injectStyles() {
@@ -297,11 +299,10 @@
       });
   }
 
-  function openAppMenu(trigger) {
+  function initAppMenu(trigger) {
     injectStyles();
 
-    // Remove any existing instance first
-    document.getElementById(MODAL_ID)?.remove();
+    if (document.getElementById(MODAL_ID)) return;
 
     // Resolve API endpoint: data-appmenu-url on the trigger element
     const apiUrl = trigger.dataset.appmenuUrl;
@@ -314,8 +315,6 @@
 
     const modalEl = createModal(manageUrl);
     document.body.appendChild(modalEl);
-
-    const bsModal = new bootstrap.Modal(modalEl);
 
     // Wire up search/filter input
     const searchInput = document.getElementById(`${MODAL_ID}Search`);
@@ -345,18 +344,39 @@
       }
     });
 
-    // Clean up the DOM after the modal closes
+    // Reset search state after the modal closes, but keep the modal in the DOM
     modalEl.addEventListener('hidden.bs.modal', () => {
-      bsModal.dispose();
-      modalEl.remove();
+      if (searchInput) {
+        searchInput.value = '';
+        filterItems('');
+      }
     });
 
-    bsModal.show();
-
+    // Pre-fetch data in the background so it's ready when the modal opens
     if (resolvedApiUrl) {
       fetchMenuItems(resolvedApiUrl);
     }
   }
+
+  function openAppMenu(trigger) {
+    // Initialise lazily (covers dynamically-added triggers missed by DOMContentLoaded)
+    if (!document.getElementById(MODAL_ID)) {
+      initAppMenu(trigger);
+    }
+
+    if (!bsModalInstance) {
+      const modalEl = document.getElementById(MODAL_ID);
+      if (modalEl) bsModalInstance = new bootstrap.Modal(modalEl);
+    }
+
+    bsModalInstance?.show();
+  }
+
+  // Pre-build the modal and start fetching data as soon as the page is ready
+  document.addEventListener('DOMContentLoaded', function () {
+    const trigger = document.querySelector('.trigger-appmenu');
+    if (trigger) initAppMenu(trigger);
+  });
 
   // Event delegation — works for triggers added dynamically to the page
   document.addEventListener('click', function (e) {
