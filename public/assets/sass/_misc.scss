@@ -5,3 +5,19 @@
     display: inline-block; /* Required for transform to work on inline elements */
     transform: scaleX(-1);
 }
+
+// GitHub Flavored Markdown — <pre><code> code blocks
+pre {
+    background-color: $dark;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+
+    code {
+        color: $body-color;
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+    }
+}

@@ -11979,4 +11979,18 @@ mark, .mark {
   transform: scaleX(-1);
 }
 
+pre {
+  background-color: #20232c;
+  border: 1px solid #495057;
+  border-radius: 0.375rem;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+}
+pre code {
+  color: #dee2e6;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */
