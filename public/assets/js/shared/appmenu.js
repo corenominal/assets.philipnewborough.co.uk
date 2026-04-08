@@ -205,7 +205,7 @@
 
     if (description) {
       const descEl = document.createElement('div');
-      descEl.className = 'small text-muted text-truncate';
+      descEl.className = 'small text-muted';
       descEl.textContent = description;
       textDiv.appendChild(descEl);
     }
