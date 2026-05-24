@@ -26,6 +26,7 @@
                     <tbody>
                         <tr><td><code>copy-bootstrap-js</code></td><td>Copies <code>bootstrap.bundle.min.js</code> from <code>node_modules</code> to <code>public/assets/js/vendor/</code></td></tr>
                         <tr><td><code>copy-bootstrap-icons</code></td><td>Copies Bootstrap Icons CSS and webfonts to <code>public/assets/css/vendor/</code></td></tr>
+                        <tr><td><code>copy-inter</code></td><td>Copies the Inter variable font WOFF2 files (latin, normal and italic) from <code>node_modules</code> to <code>public/assets/css/vendor/fonts/</code></td></tr>
                         <tr><td><code>copy-datatables</code></td><td>Copies DataTables JS and its Bootstrap 5 integration JS/CSS to the vendor directories</td></tr>
                         <tr><td><code>copy-jquery</code></td><td>Copies <code>jquery.min.js</code> to <code>public/assets/js/vendor/</code></td></tr>
                         <tr><td><code>sass</code></td><td>Runs the Dart Sass watcher in watch mode, compiling <code>bootstrap-custom.scss</code> &rarr; <code>public/assets/css/vendor/bootstrap.css</code></td></tr>
