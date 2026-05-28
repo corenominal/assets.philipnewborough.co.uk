@@ -18,8 +18,8 @@
                             <p>Are you sure you want to logout?</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-danger" id="${MODAL_ID}-confirm">Logout</button>
+                            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" id="${MODAL_ID}-confirm">Logout</button>
                         </div>
                     </div>
                 </div>

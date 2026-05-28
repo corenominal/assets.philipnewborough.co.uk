@@ -8,6 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 
 $routes->get('/admin', 'Admin\Home::index');
+$routes->get('/admin/bootstrap-demo', 'Admin\BootstrapDemo::index');
 
 // API routes
 $routes->match(['get', 'options'], '/api/test/ping', 'Api\Test::ping');

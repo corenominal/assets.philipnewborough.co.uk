@@ -10,7 +10,7 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/icon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/icon-16x16.png">
         <!-- Stylesheets -->
-        <link rel="stylesheet" href="<?= config('Urls')->assets ?>assets/css/vendor/bootstrap.css"/>
+        <link rel="stylesheet" href="<?= config('Urls')->assets ?>assets/css/vendor/bootstrap-mono.css"/>
         <?php if(isset($css)): foreach ($css as $file): $cssPath = FCPATH . 'assets/css/' . $file . '.css'; ?>
         <link rel="stylesheet" href="/assets/css/<?= $file ?>.css<?= file_exists($cssPath) ? '?v=' . filemtime($cssPath) : '' ?>">
         <?php endforeach; endif; ?>

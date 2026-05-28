@@ -1,4 +1,4 @@
-<?= $this->extend('templates/dashboard') ?>
+<?= $this->extend('templates/dashboard_v2') ?>
 
 <?= $this->section('content') ?>
 <div class="container-fluid">
@@ -17,7 +17,7 @@
             <p class="text-muted small">Run these with <code>npm run &lt;script&gt;</code>:</p>
             <div class="table-responsive mb-4">
                 <table class="table table-sm table-bordered">
-                    <thead class="table-dark">
+                    <thead>
                         <tr>
                             <th>Script</th>
                             <th>What it does</th>
