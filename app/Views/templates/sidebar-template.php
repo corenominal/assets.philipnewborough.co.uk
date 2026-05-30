@@ -71,7 +71,7 @@
                 <li>
                     <a href="#" class="nav-link"
                        data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Status">
-                        <i class="bi bi-activity"></i>
+                        <i class="bi bi-at"></i>
                         <span class="sidebar-label">Status</span>
                     </a>
                 </li>
@@ -92,7 +92,7 @@
                 <li>
                     <a href="#" class="nav-link"
                        data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Contact">
-                        <i class="bi bi-at"></i>
+                        <i class="bi bi-envelope"></i>
                         <span class="sidebar-label">Contact</span>
                     </a>
                 </li>
