@@ -37,63 +37,6 @@
     <?php endforeach; endif; ?>
 </head>
 <body class="sidebar-template d-flex">
-    <!-- Skip link -->
-    <a class="visually-hidden-focusable" href="#main">Skip to main content</a>
-
-    <!-- ═══════════════════════════════════════════════════════
-         OFFCANVAS SIDEBAR (mobile)
-    ════════════════════════════════════════════════════════════ -->
-    <div class="offcanvas offcanvas-start border-0" tabindex="-1" id="mobileSidebar" style="width: 260px;">
-        <div class="offcanvas-header px-3 py-2">
-            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-body-emphasis">
-                <img src="/icon.svg" alt="Logo" width="40" height="40" class="rounded-circle">
-                <span class="fw-semibold">corenominal</span>
-            </a>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body p-0 d-flex flex-column">
-            <nav class="flex-grow-1 overflow-y-auto py-2 px-2 sidebar-nav">
-                <ul class="nav flex-column gap-1">
-                    <li><a href="#" class="nav-link active d-flex align-items-center gap-2"><i class="bi bi-house"></i>Home</a></li>
-                    <li><a href="#" class="nav-link d-flex align-items-center gap-2"><i class="bi bi-pencil"></i>Blog</a></li>
-                    <li><a href="#" class="nav-link d-flex align-items-center gap-2"><i class="bi bi-activity"></i>Status</a></li>
-                    <li><a href="#" class="nav-link d-flex align-items-center gap-2"><i class="bi bi-bookmark"></i>Bookmarks</a></li>
-                    <li><a href="#" class="nav-link d-flex align-items-center gap-2"><i class="bi bi-info-circle"></i>About</a></li>
-                    <li><a href="#" class="nav-link d-flex align-items-center gap-2"><i class="bi bi-at"></i>Contact</a></li>
-                </ul>
-            </nav>
-            <div class="p-2">
-                <a href="#" class="sidebar-footer-link px-2 py-2">
-                    <i class="bi bi-gear" aria-hidden="true"></i>
-                    <span>Settings</span>
-                </a>
-                <div class="dropdown dropup">
-                    <a href="#" class="sidebar-footer-link dropdown-toggle px-2 py-2"
-                       data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-circle-half flex-shrink-0" aria-hidden="true"></i>
-                        <span>Theme</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><button class="dropdown-item" type="button" data-theme="light"><i class="bi bi-sun me-2" aria-hidden="true"></i>Light</button></li>
-                        <li><button class="dropdown-item" type="button" data-theme="dark"><i class="bi bi-moon me-2" aria-hidden="true"></i>Dark</button></li>
-                        <li><button class="dropdown-item" type="button" data-theme="auto"><i class="bi bi-circle-half me-2" aria-hidden="true"></i>Auto</button></li>
-                    </ul>
-                </div>
-                <?php if( session()->get('user_uuid') ): ?>
-                <a href="/sign-in.html" class="sidebar-footer-link trigger-logout px-2 py-2">
-                    <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
-                    <span>Sign out</span>
-                </a>
-                <?php else: ?>
-                <a href="<?= config('Urls')->auth ?>login?redirect=<?= urlencode(current_url()) ?>" class="sidebar-footer-link px-2 py-2">
-                    <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>
-                    <span>Sign in</span>
-                </a>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-
 
     <!-- ═══════════════════════════════════════════════════════
          SIDEBAR  (collapsed = icon-rail by default)
