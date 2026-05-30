@@ -50,9 +50,9 @@ $heading-color-dark:        $white;
 
 // ── Borders ───────────────────────────────────────────────────────────────────
 $border-color:                   $gray-300;
-$border-color-translucent:       rgba($black, .1);
+$border-color-translucent:       $gray-300;
 $border-color-dark:              $gray-700;
-$border-color-translucent-dark:  rgba($white, .15);
+$border-color-translucent-dark:  $gray-700;
 
 // ── Links ─────────────────────────────────────────────────────────────────────
 $link-color:            $black;
@@ -484,7 +484,7 @@ pre {
   background-color: $black;
   padding: 1rem 1.25rem;
   border-radius: .375rem;
-  border: 1px solid $gray-700;
+  border: 1px solid $border-color;
 
   code {
     color: inherit;
@@ -492,6 +492,9 @@ pre {
     padding: 0;
     border-radius: 0;
   }
+}
+[data-bs-theme="dark"] pre {
+  border: 1px solid $border-color-dark;
 }
 
 // Dark mode: only inline code inverts — pre is excluded via :not(pre) > code
@@ -544,3 +547,13 @@ pre {
     display: inline-block; /* Required for transform to work on inline elements */
     transform: scaleX(-1);
 }
+
+// ── Modal ─────────────────────────────────────────────────────────────────────
+.modal-header { border-bottom: 0; }
+.modal-footer { border-top: 0; }
+
+// ── HR ────────────────────────────────────────────────────────────────────────
+hr { opacity: 0.3; }
+
+// Import custom styles for templates
+@import "templates";

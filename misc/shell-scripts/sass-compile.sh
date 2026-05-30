@@ -10,9 +10,6 @@ if [ ! -x "$SASS_BIN" ]; then
     exit 1
 fi
 
-# "$SASS_BIN" -w \
-# "$PROJECT_ROOT/public/assets/sass/bootstrap-custom.scss:$PROJECT_ROOT/public/assets/css/vendor/bootstrap.css"
-
 "$SASS_BIN" -w \
 "$PROJECT_ROOT/public/assets/sass/bootstrap-custom-mono.scss:$PROJECT_ROOT/public/assets/css/vendor/bootstrap-mono.css"
 

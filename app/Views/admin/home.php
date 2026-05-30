@@ -1,4 +1,4 @@
-<?= $this->extend('templates/dashboard_v2') ?>
+<?= $this->extend('templates/sidebar-template') ?>
 
 <?= $this->section('content') ?>
 <div class="container-fluid">
